@@ -1,0 +1,31 @@
+body {
+    color: #272829;
+    background-color: #f5f8fd;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    transition: all ease-in-out 0.5s;
+    z-index: 9997;
+    padding: 0 15px;
+    background: #040b14;
+    overflow-y: auto;
+    color: #a8a9b4;
+}
+
+#cv {
+    margin-left: 300px;
+}
+
+@media (max-width: 1199px) {
+    #header {
+        left: -300px;
+    }
+    #main {
+        margin-left: 0;
+    }
+}
