@@ -1,0 +1,22 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "<!-- **maslakoff/maslakoff** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maslakoff/maslakoff.git"
+  },
+  "author": "Ihar Maslakou <igormaslakoff@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maslakoff/maslakoff/issues"
+  },
+  "homepage": "https://github.com/maslakoff/maslakoff#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
