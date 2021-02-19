@@ -22,36 +22,28 @@ sections.forEach(section => {
     $content.insertAdjacentHTML('beforeend', html)
 })
 
+function row(content) {
+    return `<section class="row">${content}</section>`;
+}
+
+function col(content) {
+    return `<div class="col-sm">${content}</div>`;
+}
+
 function title(section) {
-    return  `
-    <section class="row">
-        <div class="col-sm">
-            <h2>${section.value}</h2>
-        </div>
-    </section>
-`;
+    return row(col(`<h2>${section.value}</h2>`));
 }
 
 function text(section) {
-    return `
-    <section class="row">
-        <div class="col-sm">
-            <p>${section.value}</p>
-        </div>
-    </section>
-    `;
+    return row(col(`<p>${section.value}</p>`));
 }
 
 function columns(section) {
     const html = section.value.map(
         item => {
-            return `<div class="col-sm"><p>${item}</p></div>`
+            return col(`<p>${item}</p>`)
         }
     );
 
-    return `
-    <section class="row">
-        ${html.join('')}
-    </section>
-    `;
+    return row(html.join(''));
 }
