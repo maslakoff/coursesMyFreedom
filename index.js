@@ -3,7 +3,8 @@ const loremText = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mol
 const sections = [
     { type: 'title', value: 'Hello world!' },
     { type: 'text', value: loremText },
-    { type: 'columns', value: [ loremText, loremText, loremText ] }
+    { type: 'columns', value: [ loremText, loremText, loremText ] },
+    { type: 'image', value: './assets/profile.jpg'}
 ];
 
 const $content = document.querySelector('#cv');
@@ -34,10 +35,15 @@ function columns(section) {
     return row(html.join(''));
 }
 
+function image(section) {
+    return row(col(`<img src="${section.value}" />`));
+} 
+
 const templates = {
-   title,
-   text,
-   columns,
+   title: title,
+   text: text,
+   columns: columns,
+   image: image,
 };
 
 sections.forEach(section => {
