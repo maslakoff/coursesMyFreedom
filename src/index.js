@@ -1,5 +1,6 @@
 import { sections } from "./model";
 import { templates } from './templates'
+import './styles/main.css';
 
 const $content = document.querySelector('#cv');
 
