@@ -123,7 +123,23 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Block = void 0;
+exports.TextBlock = exports.TitleBlock = exports.Block = void 0;
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -136,6 +152,38 @@ var Block = function Block(type, value, options) {
 };
 
 exports.Block = Block;
+
+var TitleBlock = /*#__PURE__*/function (_Block) {
+  _inherits(TitleBlock, _Block);
+
+  var _super = _createSuper(TitleBlock);
+
+  function TitleBlock(value, options) {
+    _classCallCheck(this, TitleBlock);
+
+    return _super.call(this, 'title', value, options);
+  }
+
+  return TitleBlock;
+}(Block);
+
+exports.TitleBlock = TitleBlock;
+
+var TextBlock = /*#__PURE__*/function (_Block2) {
+  _inherits(TextBlock, _Block2);
+
+  var _super2 = _createSuper(TextBlock);
+
+  function TextBlock(value, options) {
+    _classCallCheck(this, TextBlock);
+
+    return _super2.call(this, 'text', value, options);
+  }
+
+  return TextBlock;
+}(Block);
+
+exports.TextBlock = TextBlock;
 },{}],"assets/profile.jpg":[function(require,module,exports) {
 module.exports = "/profile.0a62ebc3.jpg";
 },{}],"model.js":[function(require,module,exports) {
@@ -153,7 +201,7 @@ var _profile = _interopRequireDefault(require("./assets/profile.jpg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var loremText = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia excepturi commodi impedit, possimus nulla vitae et ex. Quam nisi minima cum natus rem esse voluptatum laborum eveniet sequi. Quo, quibusdam.';
-var sections = [new _blocks.Block('title', 'Hello world!'), new _blocks.Block('text', loremText), new _blocks.Block('columns', [loremText, loremText, loremText]), new _blocks.Block('image', _profile.default)];
+var sections = [new _blocks.TitleBlock('Hello world!'), new _blocks.TextBlock(loremText), new _blocks.Block('columns', [loremText, loremText, loremText]), new _blocks.Block('image', _profile.default)];
 exports.sections = sections;
 },{"./classes/blocks":"classes/blocks.js","./assets/profile.jpg":"assets/profile.jpg"}],"templates.js":[function(require,module,exports) {
 "use strict";

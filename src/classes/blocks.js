@@ -8,3 +8,15 @@ export class Block {
         this.options = options;
     }
 }
+
+export class TitleBlock extends Block {
+    constructor(value, options) {
+        super('title', value, options);
+    }
+}
+
+export class TextBlock extends Block {
+    constructor(value, options) {
+        super('text', value, options);
+    }
+}
