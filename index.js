@@ -8,20 +8,6 @@ const sections = [
 
 const $content = document.querySelector('#cv');
 
-sections.forEach(section => {
-    let html = '';
-
-    if (section.type === 'title') {
-        html = title(section);
-    } else if (section.type === 'text') {
-        html = text(section);
-    } else if (section.type === 'columns') {
-        html = columns(section);
-    }
-
-    $content.insertAdjacentHTML('beforeend', html)
-})
-
 function row(content) {
     return `<section class="row">${content}</section>`;
 }
@@ -47,3 +33,15 @@ function columns(section) {
 
     return row(html.join(''));
 }
+
+const templates = {
+   title,
+   text,
+   columns,
+};
+
+sections.forEach(section => {
+    const template = templates[section.type];
+    const html = template(section);
+    $content.insertAdjacentHTML('beforeend', html)
+})
