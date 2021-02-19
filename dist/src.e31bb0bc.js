@@ -117,7 +117,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
+})({"model.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.sections = void 0;
 var loremText = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia excepturi commodi impedit, possimus nulla vitae et ex. Quam nisi minima cum natus rem esse voluptatum laborum eveniet sequi. Quo, quibusdam.';
 var sections = [{
   type: 'title',
@@ -132,7 +138,14 @@ var sections = [{
   type: 'image',
   value: './assets/profile.jpg'
 }];
-var $content = document.querySelector('#cv');
+exports.sections = sections;
+},{}],"templates.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.templates = void 0;
 
 function row(content) {
   return "<section class=\"row\">".concat(content, "</section>");
@@ -167,12 +180,22 @@ var templates = {
   columns: columns,
   image: image
 };
-sections.forEach(function (section) {
-  var template = templates[section.type];
+exports.templates = templates;
+},{}],"index.js":[function(require,module,exports) {
+"use strict";
+
+var _model = require("./model");
+
+var _templates = require("./templates");
+
+var $content = document.querySelector('#cv');
+
+_model.sections.forEach(function (section) {
+  var template = _templates.templates[section.type];
   var html = template(section);
   $content.insertAdjacentHTML('beforeend', html);
 });
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./model":"model.js","./templates":"templates.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -200,7 +223,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56943" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60062" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
