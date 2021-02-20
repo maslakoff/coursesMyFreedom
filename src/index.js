@@ -10,3 +10,12 @@ sections.forEach(section => {
     const html = template(section);
     $content.insertAdjacentHTML('beforeend', html)
 })
+
+/**
+ * Шаг 4
+ * Расскоментировать новую реализацию рендера секций
+ * Код выше можно удалить
+ */
+// sections.forEach(section => {
+//     $content.insertAdjacentHTML('beforeend', section.toHTML())
+// })
