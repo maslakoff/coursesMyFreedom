@@ -42,3 +42,15 @@ export class TextBlock extends Block {
     @TODO шаг 1 - создать классы ColumnsBlock и ImageBlock
     добавить их в model.js
 */
+
+export class ColumnsBlock extends Block {
+    constructor(value, options) {
+        super('columns', value, options);
+    }
+}
+
+export class ImageBlock extends Block {
+    constructor(value, options) {
+        super('image', value, options);
+    }
+}
