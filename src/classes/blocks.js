@@ -1,3 +1,5 @@
+import { row, col } from "../templates.js"
+
 export class Block {
     constructor(type, value, options) {
         this.type = type;
@@ -28,8 +30,9 @@ export class TitleBlock extends Block {
      * доступ к полю value можно получить с помощью this.value
      */
     toHTML() {
-        return `<div>title</>`;
+        return row(col(`<h2>${this.value}</h2>`));
     }
+
 }
 
 export class TextBlock extends Block {
@@ -37,7 +40,7 @@ export class TextBlock extends Block {
         super('text', value, options);
     }
     toHTML() {
-        return `<div>text</>`;
+        return row(col(`<p>${this.value}</p>`));
     }
 }
 
@@ -51,7 +54,13 @@ export class ColumnsBlock extends Block {
         super('columns', value, options);
     }
     toHTML() {
-        return `<div>columns</>`;
+        const html = this.value.map(
+            item => {
+                return col(`<p>${item}</p>`)
+            }
+        );
+
+        return row(html.join(''));
     }
 }
 
@@ -60,10 +69,6 @@ export class ImageBlock extends Block {
         super('image', value, options);
     }
     toHTML() {
-        return `<div>image</>`;
-    }
-}turn `<div>image</>`;
-    }
-}turn `<div>image</>`;
+        return row(col(`<img src="${this.value}" />`));
     }
 }

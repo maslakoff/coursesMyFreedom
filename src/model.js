@@ -3,10 +3,6 @@ import image from './assets/profile.jpg';
 
 const loremText = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia excepturi commodi impedit, possimus nulla vitae et ex. Quam nisi minima cum natus rem esse voluptatum laborum eveniet sequi. Quo, quibusdam.';
 
-const title = new TitleBlock('second one');
-
-console.log(title.toHTML());
-
 export const sections = [
     new TitleBlock('Hello world!'),
     new TextBlock(loremText),
