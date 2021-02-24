@@ -1,4 +1,3 @@
-
 function row(content) {
     return `<section class="row">${content}</section>`;
 }
@@ -27,11 +26,11 @@ function columns(section) {
 
 function image(section) {
     return row(col(`<img src="${section.value}" />`));
-} 
+}
 
 export const templates = {
-   title: title,
-   text: text,
-   columns: columns,
-   image: image,
+    title: title,
+    text: text,
+    columns: columns,
+    image: image,
 };
