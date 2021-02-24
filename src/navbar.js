@@ -16,4 +16,6 @@ links.forEach(link => {
 
 function navigation(link) {
     return `<li><a href="${link.href}" class="nav-link scrollto"><i class="bi ${link.icon}"></i> <span>${link.value}</span></a></li>`;
-} 
+}     toHTML() {
+        return `<div>title</>`;
+    }
