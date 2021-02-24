@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/maslakoff/maslakoff#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.32.8"
   },
   "dependencies": {
     "model": "^6.0.1"

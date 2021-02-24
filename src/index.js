@@ -1,6 +1,6 @@
 import { sections } from "./model";
-import './styles/main.css';
+import './styles/main.scss';
 import { Application } from './classes/app'
 
-    const app = new Application('#cv');
+const app = new Application('#cv');
 app.render(sections);
