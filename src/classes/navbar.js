@@ -3,16 +3,12 @@ export class Navbar {
         this.$navbar= document.querySelector(selector);     
     }
 
-    getNavigationLink(link) {
-        return `<li><a href="${link.href}" class="nav-link scrollto"><i class="bi ${link.icon}"></i> <span>${link.value}</span></a></li>`;
-    }
-
     //
     render(links) {
         const $navbarUl = document.createElement('ul');
         this.$navbar.append($navbarUl);
         links.forEach(link => {
-            $navbarUl.insertAdjacentHTML('beforeend', this.getNavigationLink(link))
+            $navbarUl.insertAdjacentHTML('beforeend', link.toHtml())
         });
     }
 }
