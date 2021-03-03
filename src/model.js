@@ -9,3 +9,11 @@ export const sections = [
     new ColumnsBlock([loremText, loremText, loremText]),
     new ImageBlock(image),
 ];
+
+export const links = [
+    { href: '#hero', icon: 'bi-house-door', value: 'Home' },
+    { href: '#about', icon: 'bi-person', value: 'About' },
+    { href: '#resume', icon: 'bi-book', value: 'Resume' },
+    { href: '#contacts', icon: 'bi-envelope-open', value: 'Contacts' },
+];
+
