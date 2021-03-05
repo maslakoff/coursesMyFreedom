@@ -35,25 +35,30 @@ export class Application {
 
     initializeScrollToTop() {
 
-        // const srollToTop = () => {
-        //     window.scrollTo({
-        //         top: 0,
-        //         behavior: 'smooth'
-        //     })
-        // }
+       const backToTop = document.createElement('i');
+       backToTop.className = "back-to-top d-flex align-items-center justify-content-center bi bi-arrow-up-short";
 
-        // querySelector
-       //  scrollY > 100
-       // toogle active
-       // i click -> scrollToTop
+       const showScroll = () => {
+            if (window.scrollY > 100) {
+                backToTop.classList.add("active");
+            } else {
+                backToTop.classList.remove("active");
+            }
+        };
+       
+       document.addEventListener('scroll', showScroll);
+       
 
-        window.addEventListener('load', () => {
-            console.log('loaded')
-        })
+       const scrollToTop = () => {
+           window.scrollTo({
+               top: 0,
+               behavior: 'smooth'
+           })
+       };
 
-        document.addEventListener('scroll', () => {
-            console.log(`scroll: ${window.scrollY}`)
-        })
+        backToTop.addEventListener("click", scrollToTop);
+
+        this.$content.append(backToTop);
     }
 }
 
